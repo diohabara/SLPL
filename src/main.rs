@@ -81,7 +81,7 @@ fn maxargs(stm: &Stm) -> i32 {
 }
 
 #[test]
-fn maxargs_test() {
+fn test_maxargs() {
     let prog = CompoundStm(
         Box::new(AssignStm(
             "a".to_string(),
