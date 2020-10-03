@@ -1,5 +1,7 @@
 # Straight-line programming language
 
+![CI](https://github.com/diohabara/SLPL/workflows/CI/badge.svg)
+
 ## Grammar
 
 ```text
