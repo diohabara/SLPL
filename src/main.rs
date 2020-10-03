@@ -32,7 +32,7 @@ fn main() {
 fn maxargs_expr(expr: &Exp) -> i32 {
     match *expr {
         IdExp(_) => 0,
-        NumExp(num) => num,
+        NumExp(num) => 0,
         OpExp(ref e1, _, ref e2) => max(maxargs_expr(e1), maxargs_expr(e2)),
         ExpList(ref stm, ref expr) => max(maxargs(stm), maxargs_expr(expr)),
     }
@@ -48,7 +48,7 @@ fn maxargs(stm: &Stm) -> i32 {
                 .map(|expr| maxargs_expr(expr))
                 .max()
                 .unwrap_or(0);
-            maximum
+            max(maximum, exprs.len() as i32)
         }
     }
 }
